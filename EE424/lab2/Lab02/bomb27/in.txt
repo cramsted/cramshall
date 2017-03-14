@@ -1,0 +1,6 @@
+Brownie, you are doing a heck of a job.
+1 2 4 8 16 32
+7 870
+14 7
+25<4?7
+2 5 1 4 6 3

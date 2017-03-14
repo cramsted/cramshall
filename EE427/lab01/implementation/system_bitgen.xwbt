@@ -1,0 +1,7 @@
+INFILE=Z:\groups\cramarshall\EE427\lab01\implementation\system.ncd
+OUTFILE=Z:\groups\cramarshall\EE427\lab01\implementation\system.bit
+FAMILY=Virtex6
+PART=xc6vlx240t-1ff1156
+WORKINGDIR=Z:\groups\cramarshall\EE427\lab01\implementation
+LICENSE=ISE
+USER_INFO=174672765_1777505556_210596263_102

@@ -1,0 +1,14 @@
+##Pipeline stall. The instruction in the instruction register cannot finish the Issue stage.
+##• WAW hazard. Make sure you understand how this CPU deals with WAW hazards.
+##• RAW hazard. Make sure you understand how this CPU deals with RAW hazards.
+##• Functional unit conflict. Two or more entries in the reservation stations of the same function unit
+##become ready on the same cycle, creating a conflict for the functional unit on the next cycle. (The
+##oldest instruction will win.)
+##• CDB conflict. Two or more functional units finish execution on the same cycle, creating a conflict for
+##the CDB. (The functional unit with the longest latency will win.)
+##• Load forced to wait. A load must wait at least one cycle because the store buffer includes a entry for
+##which the address has not yet been determined. As discussed previously in this document, this is not
+##the same as waiting for the value in a store buffer entry with a matching address.
+##• Load gets value from store buffer. A load matches on the address in the store buffer and get its return
+##value from the associated value field of that entry.
+##• Loads executing out-of-order. A load moves past a previously issued load and executes first

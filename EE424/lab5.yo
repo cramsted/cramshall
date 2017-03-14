@@ -1,0 +1,35 @@
+                            | # BYU ECEn 424
+                            | # This is the file you start with for Lab 5.
+                            | # After making your edits and verifying that it works, this is also
+                            | # the file you submit.
+                            | #
+                            | # Clayton Ramstedt
+                            | # Marshall Garey
+                            | # 3/2/2016
+                            | 
+0x000:                      |  .pos 0
+0x000: 30f40010000000000000 |     irmovq Stack,%rsp # The 18 instructions you can modify start here
+0x00a: 6544                 |     divq %rsp, %rsp        # WAW
+0x00c: 40440000000000000000 |     rmmovq %rsp, (%rsp)    # load get from store buffer, load forced to wait, Funcitonal unit conflict
+0x016: 50240000000000000000 |     mrmovq (%rsp), %rdx    # load get from store buffer, load forced to wait, Funcitonal unit conflict
+0x020: 50830800000000000000 |     mrmovq 8(%rbx), %r8    # loads executing out of order, CDB
+0x02a: b04f                 |     popq %rsp              # WAW, CDB
+0x02c: 6524                 |     divq %rdx, %rsp        # RAW
+0x02e: 6544                 |     divq %rsp, %rsp        # RAW
+0x030: 6544                 |     divq %rsp, %rsp        # Stall from here on down
+0x032: 6544                 |     divq %rsp, %rsp     
+0x034: 6544                 |     divq %rsp, %rsp
+0x036: 6544                 |     divq %rsp, %rsp
+0x038: 6544                 |     divq %rsp, %rsp
+0x03a: 6544                 |     divq %rsp, %rsp
+0x03c: 6544                 |     divq %rsp, %rsp
+0x03e: 6544                 |     divq %rsp, %rsp
+0x040: 6544                 |     divq %rsp, %rsp
+0x042: 6544                 |     divq %rsp, %rsp
+0x044: 6544                 |     divq %rsp, %rsp
+                            | # The 18 instructions you can modify end here
+0x046: 00                   |     halt
+0x1000:                      |     .pos 0x1000
+0x1000:                      | Stack:
+                             | 
+                             | 

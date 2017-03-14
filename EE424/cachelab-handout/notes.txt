@@ -1,0 +1,101 @@
+Dave, 16 sets, associativity 1, 16-byte blocks:
+s = 4, b = 4
+<tag> <set index> <block offset>
+
+L 10,4
+	block offset = 0
+	set index = 1
+	tag = 0
+	miss: get 16 bytes starting at address 0x10
+
+S 18,4
+	block offset = 8
+	set index = 1
+	tag = 0
+	hit
+
+L 20,4
+	b = 0
+	s i = 2
+	tag = 0
+	miss, get 16 bytes starting at address 0x20, set 2
+
+S 28,4
+	b = 8
+	s i = 2
+	tag = 0
+	hit - accessing same set and block as above, just a different block offset
+
+S 50,4
+	b = 0
+	s i = 5
+	tag = 0
+	miss
+
+How to check for a hit:
+	go to set index
+	one of the blocks in the set has a matching tag
+	valid bit is one
+	
+How to check for eviction:
+	It's a miss but there is no more room to load a block in - check isFull bit
+
+/*
+* S: # of Sets
+* s: # of set bits
+* B: # bytes in one block
+* b: # block offset bits
+* t: # tag bits = m - (s + b)
+*/
+
+// Things to do:
+// Get command line arguments
+// Determine size of cache:
+//   # sets (2^s) - (# rows in the cache)
+//   block size (2^b)
+//   associatvity (E) - (# blocks/columns per set/row)
+// Parse the input valgrind trace file
+// Model a cache with a struct
+// Extract the tag, set index, block offset from an address (valgrind input file)
+// How the operations affect the cache: hit or miss
+//   I (instruction load)
+//   M (data modify - load then store)
+//   S (data store)
+//   L (data load)
+// Ignoore I lines
+// Calculate hit or miss based on what is in the cache
+// Caculate evictions using LRU replacement policy
+// Print the result in verbose or nonverbose mode
+
+// Architecture:
+// Get next valgrind file input line
+// Extract next operation (I,M,S,L), memory address, #bytes accessed from input line
+// Filter out the I commands
+// Create an array of sets that each contain arrays of blocks based on the input parameters
+// Load and store instructions will function the same
+// Modify will always call the Load/Store function first and then hit
+// Print the output
+
+
+s: 4, E: 2, b: 4
+Ours:
+L 10,1 miss
+M 20,1 miss hit
+L 22,1 hit
+S 18,1 hit
+L 110,1 miss
+L 210,1 miss eviction
+M 12,1 hit hit
+hits:5 misses:4 evictions:1
+
+
+Theirs:
+L 10,1 miss
+M 20,1 miss hit
+L 22,1 hit
+S 18,1 hit
+L 110,1 miss
+L 210,1 miss eviction
+M 12,1 miss eviction hit
+hits:4 misses:5 evictions:2
+

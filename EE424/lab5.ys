@@ -1,0 +1,35 @@
+# BYU ECEn 424
+# This is the file you start with for Lab 5.
+# After making your edits and verifying that it works, this is also
+# the file you submit.
+#
+# Clayton Ramstedt
+# Marshall Garey
+# 3/2/2016
+
+ .pos 0
+    irmovq Stack,%rsp # The 18 instructions you can modify start here
+    divq %rsp, %rsp        # WAW
+    rmmovq %rsp, (%rsp)    # load get from store buffer, load forced to wait, Funcitonal unit conflict
+    mrmovq (%rsp), %rdx    # load get from store buffer, load forced to wait, Funcitonal unit conflict
+    mrmovq 8(%rbx), %r8    # loads executing out of order, CDB
+    popq %rsp              # WAW, CDB
+    divq %rdx, %rsp        # RAW
+    divq %rsp, %rsp        # RAW
+    divq %rsp, %rsp        # Stall from here on down
+    divq %rsp, %rsp     
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+    divq %rsp, %rsp
+# The 18 instructions you can modify end here
+    halt
+    .pos 0x1000
+Stack:
+
+

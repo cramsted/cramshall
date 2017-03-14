@@ -1,0 +1,16 @@
+Z:\groups\cramarshall\EE427\lab01\implementation\system.ngc 1472919904
+Z:/groups/cramarshall/EE427/lab01/implementation/push_buttons_5bits_wrapper.ngc 1472919840
+Z:/groups/cramarshall/EE427/lab01/implementation/dip_switches_8bits_wrapper.ngc 1472919861
+Z:/groups/cramarshall/EE427/lab01/implementation/rs232_uart_1_wrapper.ngc 1472919829
+Z:/groups/cramarshall/EE427/lab01/implementation/proc_sys_reset_0_wrapper.ngc 1472919609
+Z:/groups/cramarshall/EE427/lab01/implementation/clock_generator_0_wrapper.ngc 1472919875
+Z:/groups/cramarshall/EE427/lab01/implementation/microblaze_0_ilmb_wrapper.ngc 1472919862
+Z:/groups/cramarshall/EE427/lab01/implementation/microblaze_0_dlmb_wrapper.ngc 1472919866
+Z:/groups/cramarshall/EE427/lab01/implementation/axi4lite_0_wrapper.ngc 1472919880
+Z:/groups/cramarshall/EE427/lab01/implementation/microblaze_0_wrapper.ngc 1472919871
+Z:/groups/cramarshall/EE427/lab01/implementation/microblaze_0_i_bram_ctrl_wrapper.ngc 1472919623
+Z:/groups/cramarshall/EE427/lab01/implementation/microblaze_0_d_bram_ctrl_wrapper.ngc 1472919636
+Z:/groups/cramarshall/EE427/lab01/implementation/debug_module_wrapper.ngc 1472919795
+Z:/groups/cramarshall/EE427/lab01/implementation/leds_8bits_wrapper.ngc 1472919850
+Z:/groups/cramarshall/EE427/lab01/implementation/microblaze_0_bram_block_wrapper.ngc 1472919645
+OK
